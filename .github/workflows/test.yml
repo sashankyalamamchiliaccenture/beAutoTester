@@ -1,6 +1,9 @@
-name: CI Pipeline
+name: Feature Branch Tests
 
 on:
+  push:
+    branches-ignore:
+      - main
   pull_request:
     branches:
       - main
@@ -11,7 +14,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
       - name: Install Dependencies
         run: npm install
+
       - name: Run Tests
         run: npm test

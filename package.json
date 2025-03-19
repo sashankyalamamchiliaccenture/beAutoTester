@@ -2,5 +2,12 @@
     "name": "beautotester",
     "version": "1.0.0",
     "type": "module",
-    "dependencies": {}
+    "scripts": {
+        "test": "jest --runInBand"
+    },
+    "devDependencies": {
+        "husky": "^9.1.7",
+        "jest": "^29.0.0",
+        "node-fetch": "^3.0.0"
+    }
 }
