@@ -1,0 +1,4 @@
+.vercel
+/terraform.tfvars
+.env
+node_modules

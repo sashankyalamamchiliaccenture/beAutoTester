@@ -1,0 +1,2 @@
+vercel_api_token = "ZhDZToCGlbnk3pHUSchHWR1z"
+github_token = "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"
