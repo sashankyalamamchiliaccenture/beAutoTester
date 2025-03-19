@@ -1,7 +1,7 @@
-import { getUserFromDB } from "../lib/database";
-import fetch from "node-fetch";
+const { getUserFromDB } = require("../lib/database");
+const fetch = require("node-fetch");
 
-export default async function handler(req) {
+module.exports = async function handler(req) {
   const userId = req.query.id;
   const user = await getUserFromDB(userId);
   const externalData = await fetch(`https://external-api.com/data/${userId}`)
@@ -11,4 +11,4 @@ export default async function handler(req) {
     JSON.stringify({ user, externalData }),
     { headers: { "Content-Type": "application/json" } }
   );
-}
+};

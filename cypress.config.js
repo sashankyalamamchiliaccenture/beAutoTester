@@ -1,11 +1,8 @@
-const { defineConfig } = require('cypress');
-
-module.exports = defineConfig({
-  e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
-    baseUrl: process.env.VERCEL_URL || 'http://localhost:3000',
-    supportFile: false,
-  },
-});
+export default {
+  testEnvironment: "node", // Ensures tests run in a Node.js environment
+  transform: {}, // Prevents Jest from trying to transform ES modules
+  extensionsToTreatAsEsm: [".js"], // Ensures Jest treats `.js` files as ES modules
+  moduleNameMapper: {
+    "^(\\.{1,2}/.*)\\.js$": "$1" // Fixes import paths for ES Modules
+  }
+};
